@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rosa de vera</title>
+    <meta name="description" content="Rosa de Vera's website for CD Studio: Javascript, Spring 2025">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="name">
+        <h1>rosa de vera </h1>
+        <h2>CD Studio: Javascript<br>
+            Spring 2025<br>
+            Parsons School of Design
+        </h2>
+    </section>
+
+    <div class="flower1"><a href="https://spectacular-pyroraptor-7a7.notion.site/Assignments-180c017ebc1481c0aaddf165a099040c">✿</a></div>
+    <div class="flower2"><a href="https://spectacular-pyroraptor-7a7.notion.site/Assignments-180c017ebc1481c0aaddf165a099040c">❀</a></div>
+    <div class="flower3"><a href="https://spectacular-pyroraptor-7a7.notion.site/Assignments-180c017ebc1481c0aaddf165a099040c"">❁</a></div>
+
+    <section class="container">
+        <h3>Project 1: Changing States</h3>
+        <h3>Project 2: Generative Tool</h3>
+        <h3>Project 3: Sender Receiver</h3>
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const flowers = document.querySelectorAll('.flower1, .flower2, .flower3');
+    const projects = document.querySelectorAll('.container h3');
+
+    flowers.forEach((flower, index) => {
+        let timeout;
+
+        flower.addEventListener('mouseenter', function() {
+            // Set a timeout to delay showing the corresponding project
+            timeout = setTimeout(() => {
+                projects[index].style.display = 'block';
+            }, 300); // 1000 milliseconds = 1 second
+        });
+
+        flower.addEventListener('mouseleave', function() {
+            // Clear the timeout if the mouse leaves before the delay
+            clearTimeout(timeout);
+
+            // Hide the corresponding project
+            projects[index].style.display = 'none';
+        });
+    });
+});
+    </script>
+
+</body>
+</html>
+
+

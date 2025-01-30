@@ -1,0 +1,211 @@
+body {
+    margin:0;
+    overflow-y: hidden;
+}
+
+@font-face {
+    font-family: Director-regular;
+    src: url(Director-Regular.otf);
+}
+
+@font-face {
+    font-family: Director-bold;
+    src: url(Director-bold.otf);
+}
+
+@font-face {
+    font-family: AlteHaas-regular;
+    src: url(AlteHaasGroteskRegular.ttf);
+}
+
+body {
+    background-repeat: no-repeat;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    margin-top: 0;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+
+.name {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    width: fit-content;
+    height: fit-content;
+    /* border: solid 4px red; */
+}
+
+h1 {
+    font-family: "Director-regular";
+    font-size: 1.25rem;
+    color: #d40d77;
+
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .10em solid #d40d77; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    animation: 
+      typing 2.5s steps(12, end),
+      blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+  
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #d40d77; }
+}
+
+h2 {
+    font-family: "AlteHaas-regular";
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+}
+
+
+.flower1 {
+    position: fixed;
+    top: 5vh;
+    left: 25vw;
+    font-size: 23rem;
+    animation:spin 60s linear infinite;
+}
+
+.flower1 a {
+    color:white;
+    text-decoration: none;
+    filter: drop-shadow(0px 0px 8px #ec80ff);
+    transition: ease-in-out .75s;
+}
+
+.flower1 a:hover {
+    color:#ec80ff;
+    cursor: pointer;
+}
+
+.flower2 {
+    position: fixed;
+    top: 23vh;
+    right: 10vw;
+    font-size: 23rem;
+    transition:ease-in-out 0.5s;
+    animation:spin 50s linear infinite;
+}
+
+.flower2 a {
+    color:white;
+    text-decoration: none;
+    filter: drop-shadow(0px 0px 8px #ffaf53);
+    transition: ease-in-out .75s;
+}
+
+.flower2 a:hover {
+    color:#ffaf53;
+    cursor: pointer;
+}
+
+.flower3 {
+    position: fixed;
+    top: 47vh;
+    left: 45vw;
+    font-size: 23rem;
+    transition:ease-in-out 0.5s;
+    animation: spin2 70s linear infinite;
+}
+
+.flower3 a {
+    color:white;
+    text-decoration: none;
+    filter: drop-shadow(0px 0px 8px #e3175e);
+    transition: ease-in-out .75s;
+}
+
+.flower3 a:hover {
+    color:#e3175e;
+    cursor: pointer;
+}
+
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+
+@keyframes spin2 { 
+    100% { 
+        -webkit-transform: rotate(-360deg); 
+        transform:rotate(-360deg); 
+    } 
+}
+
+.container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: 100vh; 
+    /* border: 1px solid #000;  */
+}
+
+h3 {
+    font-family: "AlteHaas-regular";
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+    color: black;
+}
+
+.container h3 {
+    display: none; 
+    z-index: 999;
+}
+
+.flower1:hover + .container h3:nth-of-type(1),
+.flower2:hover + .container h3:nth-of-type(2),
+.flower3:hover + .container h3:nth-of-type(3) {
+    display: block; /* Show the corresponding h3 element when hovering over a flower */
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        margin:0;
+        overflow-y: hidden;
+    }
+    
+    .flower1 {
+        top: 12vh;
+        left: 7vw;
+        font-size: 15rem;
+        
+    }
+
+    .flower2 {
+        top: 35vh;
+        left: 40vw;
+        font-size: 15rem;
+    }
+  
+    .flower3 {
+        top: 62vh;
+        left: 20vw;
+        font-size: 15rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+}
